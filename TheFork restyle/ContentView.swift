@@ -146,10 +146,12 @@ struct ContentView: View {
                         .foregroundColor((Color(red: 89/255, green: 147/255, blue: 63/255)))
                         Text("/ 10")
                         .font(.title2)
+                        .fontWeight(.semibold)
                         
                     }
                   
                     Text("23 recensioni TheFork")
+                        .foregroundColor(.secondary)
                         .font(.subheadline)
                         Spacer(minLength: 20)
                     }
@@ -160,6 +162,7 @@ struct ContentView: View {
                         Image("foto2")
                         }
                     }
+              
                    
                    
                     VStack(spacing: 0){
@@ -167,16 +170,19 @@ struct ContentView: View {
                     Rectangle()
                    .foregroundColor(Color("color1"))
                     .frame(width: .infinity, height: 20, alignment: .center)
+                        
                         VStack(alignment:.leading){
                         Divider()
                         Text("Menù")
-                        .font(.headline)
+                        .font(.title2)
                         .bold()
                         .padding()
                         Divider()
                             HStack{
                         Image(systemName: "dollarsign.square")
                         Text("PREZZO MEDIO 25 €")
+                                    .font(.headline)
+                                    .fontWeight(.semibold)
                             }
                         .padding()
                             Divider()
@@ -184,24 +190,30 @@ struct ContentView: View {
                             HStack{
                             VStack(alignment: .leading){
                             Text("Eliche alla genovese")
+                                    .font(.subheadline)
                             Spacer()
                             Spacer()
                             Text("Spaghetti cacio e pepe al profumo di limone di Sorrento e crudo di gamberi rossi di Mazara del Vallo")
+                                    .font(.subheadline)
                             Spacer()
                             Spacer()
                             Text("Tubettoni al ragù di totano di fondale ed il suo crudo")
+                                    .font(.subheadline)
                             Spacer()
                             Spacer()
                             }
                             .padding()
                             VStack(alignment: .trailing){
                                 Text("14€")
+                                    .fontWeight(.semibold)
                                 Spacer()
                                 Spacer()
                                 Text("17€")
+                                    .fontWeight(.semibold)
                                 Spacer()
                                 Spacer()
                                 Text("16€")
+                                    .fontWeight(.semibold)
                                 Spacer()
                                 Spacer()
                             }
@@ -209,18 +221,21 @@ struct ContentView: View {
                             }
                         }
                         
+                        Button(action:{}){
                         ZStack{
                         Rectangle()
                         .cornerRadius(5)
                         .frame(width: 334, height: 38, alignment: .center)
                         .foregroundColor(Color("color2"))
-                        .border((Color("color5")))
+                        .border((Color("color4")))
                         Text("VEDI IL MENÙ COMPLETO")
-                        .font(.subheadline)
+                        .foregroundColor(Color("color4"))
+                        .font(.headline)
                         .padding()
+                            }
                         }
                         
-                        Spacer(minLength: 15)
+                        Spacer(minLength: 20)
                         Divider()
 
                         
@@ -231,6 +246,7 @@ struct ContentView: View {
                         
                     // BACKGROUND GRIGIO DA IMPLEMENTARE
                     
+                    Button(action: {}){
                     VStack(spacing: 0){
                         ZStack{
                     Rectangle()
@@ -242,9 +258,11 @@ struct ContentView: View {
                             
                             VStack{
                             Text("-30%")
+                            .foregroundColor(.primary)
                             .font(.largeTitle)
                             .bold()
                             Text("prenotando nella giornata odierna")
+                            .foregroundColor(.primary)
                             .font(.subheadline)
                             }
                         }
@@ -255,6 +273,7 @@ struct ContentView: View {
                     .frame(width: 360, height: 40, alignment: .center)
                     .foregroundColor(Color(red: 89/255, green: 147/255, blue: 63/255))
                     .cornerRadius(0)
+                    .shadow(radius: 10, y:15)
                             
                             Text("PRENOTA UN TAVOLO")
                                 .foregroundColor(.white)
@@ -262,6 +281,7 @@ struct ContentView: View {
                            
                                 }
                             }
+                    }
                     .offset(y: -10)
                         }
                         
@@ -351,9 +371,11 @@ struct ContentView: View {
                     .padding()
                     Spacer(minLength: -40)
                     Divider()
+                    Button(action:{}){
                     Text("Leggi tutte le recensioni")
                         .bold()
                         .foregroundColor(Color("color4"))
+                        }
                 }
 //                    .background(.white)
                     
@@ -380,17 +402,21 @@ struct ContentView: View {
                             .cornerRadius(5)
                             .border(Color("color5"))
                                 
+                            Button(action:{}){
                                 HStack(spacing: 160){
                                     VStack(alignment: .trailing){
                             Text("Altre informazioni")
+                                    .foregroundColor(.primary)
                                     .bold()
                                     }
                                     .padding()
                                     VStack(alignment: .leading){
                             Image(systemName: "chevron.right")
+                                    .foregroundColor(.primary)
                                     }
                                     .padding()
                                     }
+                            }
                                 }.offset(y: -60)
                             }
                         }
@@ -403,6 +429,7 @@ struct ContentView: View {
            .ignoresSafeArea()
                 
             .safeAreaInset(edge: .bottom){
+            Button(action:{}){
             ZStack{
             Rectangle()
                 .foregroundColor(Color(red: 89/255, green: 147/255, blue: 63/255))
@@ -411,6 +438,7 @@ struct ContentView: View {
                 Text("PRENOTA UN TAVOLO")
                     .foregroundColor(.white)
                     .bold() // è semibold
+                    }
                 }
             }
             
@@ -456,6 +484,6 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
-            .preferredColorScheme(.dark)
+           .preferredColorScheme(.dark)
     }
 }
